@@ -1,0 +1,42 @@
+{
+  "name": "puzzle.js",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "npm run clean && node scripts/dev.js",
+        "dev:r": "npm run clean && node scripts/build.js env=development",
+        "build": "npm run clean && node scripts/build.js env=production",
+        "clean": "node scripts/clean.js",
+        "publish": "npm run build && lerna publish",
+        "link": "lerna clean -y && lerna bootstrap && lerna link"
+    },
+    "author": "refrain",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.16.0",
+        "@babel/plugin-proposal-class-properties": "^7.16.0",
+        "@babel/preset-env": "^7.16.4",
+        "@rollup/plugin-babel": "^5.3.0",
+        "@rollup/plugin-commonjs": "^21.0.1",
+        "@rollup/plugin-json": "^4.1.0",
+        "@rollup/plugin-node-resolve": "^13.0.6",
+        "@typescript-eslint/eslint-plugin": "^5.5.0",
+        "@typescript-eslint/parser": "^5.5.0",
+        "esbuild": "^0.14.12",
+        "eslint": "^8.4.0",
+        "execa": "4.0.0",
+        "fs-extra": "^10.0.0",
+        "lerna": "^4.0.0",
+        "prettier": "^2.5.0",
+        "rollup": "^2.60.2",
+        "rollup-plugin-dts": "^4.0.1",
+        "rollup-plugin-esbuild": "^4.8.2",
+        "rollup-plugin-typescript2": "^0.31.1",
+        "tslib": "^2.3.1",
+        "typescript": "^4.5.2"
+    }
+}
